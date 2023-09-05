@@ -5,14 +5,9 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <header>
-
-  </header>
-
   <main>
-    <RouterView />
+    <v-container>
+      <RouterView />
+    </v-container>
   </main>
 </template>
-
-<style scoped>
-</style>

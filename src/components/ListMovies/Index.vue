@@ -1,18 +1,16 @@
 <script setup lang="ts">
+    import Card from '@/components/ListMovies/Card.vue'
     import { useMovieStore } from '@/stores/movie'
+    import { computed } from 'vue'
+
     const store = useMovieStore()
+    const movies = computed(() => store.getMovie) 
 </script>
 
 <template>
-    <div class="list-movies">
-        <h1 class="list-movies__title">Teste tecnico de listagem de filmes</h1>
-        
-        <section class="list-movies__content">
-
-        </section>
-    </div>
+    <v-row>
+        <v-col v-for="movie in movies" :key="movie.id" md="4">
+            <Card :card="movie" />
+        </v-col>
+    </v-row>
 </template>
-
-<style lang="scss" scoped>
-
-</style>
